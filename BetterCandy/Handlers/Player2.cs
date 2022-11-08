@@ -10,7 +10,7 @@ namespace BetterCandyPorted.Handlers
 
         public void OnInteractingWithScp330(InteractingScp330EventArgs ev)
         {
-            if (ev.UsageCount == plugin.Config.PickCandyTimes - 1)
+            if (ev.UsageCount == plugin.Config.PickCandyTimes)
             {
                 ev.ShouldSever = true;
             }
