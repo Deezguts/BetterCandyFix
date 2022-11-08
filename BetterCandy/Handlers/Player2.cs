@@ -1,9 +1,7 @@
-﻿using Exiled.API.Features;
 using Exiled.Events.EventArgs;
-using System.Collections.Generic;
-using System.Linq;
+using Exiled.Events.Handlers;
 using UnityEngine;
-namespace BetterCandy.Handlers
+namespace BetterCandyPorted.Handlers
 {
     public class Player2
     {
@@ -12,7 +10,7 @@ namespace BetterCandy.Handlers
 
         public void OnInteractingWithScp330(InteractingScp330EventArgs ev)
         {
-            if (ev.UsageCount == plugin.Config.PickCandyTimes)
+            if (ev.UsageCount == plugin.Config.PickCandyTimes - 2)
             {
                 ev.ShouldSever = true;
             }
@@ -21,14 +19,13 @@ namespace BetterCandy.Handlers
                 ev.ShouldSever = false;
             }
 
-            int RandomNumber = Random.Range(1, Plugin.Singleton.Config.MaxRandomizer);
+            int RandomNumber = Random.Range(1, plugin.Config.MaxRandomizer);
 
             if (RandomNumber == plugin.Config.ChoosenNumber)
             {
                 ev.IsAllowed = false;
                 ev.Player.TryAddCandy(InventorySystem.Items.Usables.Scp330.CandyKindID.Pink);
-                Debug.Log("Cu de anao pelado sem roupa sexooxoxoxoaxoasxosdaosdao");
             }
-        }
+        }                    
     }
 }
