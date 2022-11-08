@@ -1,9 +1,9 @@
-﻿using Exiled.API.Enums;
+using Exiled.API.Enums;
 using Exiled.API.Interfaces;
 using System.Collections.Generic;
 using System.ComponentModel;
 
-namespace BetterCandy
+namespace BetterCandyPorted
 {
     public sealed class Config : IConfig
     {
